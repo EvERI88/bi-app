@@ -1,0 +1,49 @@
+﻿<Page x:Class="Kursa4.ADMIN"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Kursa4"
+      mc:Ignorable="d" 
+      d:DesignHeight="1080" d:DesignWidth="1920"
+      Title="ADMIN">
+
+    <Grid Background="Aqua" >
+        <Button Content="Выйти" FontSize="30" FontFamily="Sitka Display" Margin="1228,538,233,447" Click="Button_Click_1"></Button>
+        
+        <Button Content="Удалить модель из таблицы" FontSize="30" FontFamily="Sitka Display" Margin="1228,439,233,546" Click="Delete"></Button>
+        <Button FontSize="30" FontFamily="Sitka Display" Click="Button_Click" Margin="1228,242,233,743" Content="Загрузить фотку и добавить" RenderTransformOrigin="0.5,0.5"/>
+        <TextBox PreviewTextInput="price_PreviewTextInput"  FontSize="30" FontFamily="Sitka Display" Name="txtprice" HorizontalAlignment="Center" Width="459" Margin="764,242,697,744">Price</TextBox>
+        <TextBox FontSize="30" FontFamily="Sitka Display" Name="txtname" HorizontalAlignment="Center" Width="459" Margin="300,242,1161,744">Name</TextBox>
+        <TextBox FontSize="30" FontFamily="Sitka Display" Name="txtsize" HorizontalAlignment="Center" Width="459" Margin="300,339,1161,646">Size</TextBox>
+        <TextBox FontSize="30" FontFamily="Sitka Display" Name="txtmaterial" HorizontalAlignment="Center" Width="459" Margin="300,439,1161,547">Material</TextBox>
+        <TextBox PreviewTextInput="picture_PreviewTextInput"  FontSize="30" FontFamily="Sitka Display" Name="txtpicture" HorizontalAlignment="Center" Width="459" Margin="300,538,1161,447">Picture</TextBox>
+        <TextBox  PreviewTextInput="number_PreviewTextInput" FontSize="30" FontFamily="Sitka Display" Name="txtnumberbike" HorizontalAlignment="Center" Width="459" Margin="764,339,697,646">NumberBike</TextBox>
+        <TextBox FontSize="30" FontFamily="Sitka Display" Name="txtdescriptrion" HorizontalAlignment="Center" Width="459" Margin="764,539,697,447">Description</TextBox>
+        <TextBox FontSize="30" FontFamily="Sitka Display" Name="txttype" HorizontalAlignment="Center" Width="459" Margin="764,439,697,547">Type</TextBox>
+        <DataGrid Background="#98facc"  AutoGenerateColumns="False" Margin="300,658,244,98" FontFamily="Sitka Display" x:Name="lbTodoList" HorizontalContentAlignment="Stretch" IsReadOnly="True" RenderTransformOrigin="0.5,0.5">
+            <DataGrid.Columns>
+                <DataGridTemplateColumn >
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel>
+                                <Image Height="150"  Width="150" Source="{Binding Photo}"/>
+                            </StackPanel>
+                        </DataTemplate>
+
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn  Width="*" Header="Название" Binding="{Binding Name}"/>
+                <DataGridTextColumn  Width="*" Header="№" Binding="{Binding NumberBike}"  />
+                <DataGridTextColumn Width="*" Header="Цена" Binding="{Binding Price}"/>
+                <DataGridTextColumn Width="*" Header="Размер" Binding="{Binding Size}"/>
+                <DataGridTextColumn Width="*" Header="Материал" Binding="{Binding Material}"/>
+                <DataGridTextColumn Width="*" Header="Тип" Binding="{Binding Type}"/>
+                <DataGridTextColumn Width="*" Header="Описание" Binding="{Binding Description}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Frame x:Name="frame" NavigationUIVisibility="Hidden" HorizontalAlignment="Left" Height="1080" VerticalAlignment="Top" Width="1920"  />
+
+
+    </Grid>
+</Page>
